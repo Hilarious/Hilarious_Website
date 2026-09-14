@@ -11,3 +11,5 @@ export-statique/
 source/.openai/
 # Fichiers techniques macOS
 .DS_Store
+.vercel
+.env*
