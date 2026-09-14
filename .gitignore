@@ -13,3 +13,8 @@ source/.openai/
 .DS_Store
 .vercel
 .env*
+
+# Generes automatiquement par l outil de developpement de Next, sans interet pour nous.
+# Un CLAUDE.md ici serait lu comme des instructions de projet.
+source/AGENTS.md
+source/CLAUDE.md

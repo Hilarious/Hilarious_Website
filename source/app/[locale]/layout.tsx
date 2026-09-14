@@ -4,6 +4,7 @@ import '@/app/doors.css';
 import '@/app/loyalty.css';
 import '@/app/layout-fixes.css';
 import '@/app/charte.css';
+import '@/app/composition.css';
 import { indexable, origin } from '@/lib/seo';
 import { copy } from '@/lib/content';
 

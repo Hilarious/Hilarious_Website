@@ -88,7 +88,7 @@ function ProjectCard({ l, id, featured = false }: { l: Locale; id: string; featu
   const p = cases[l][id];
   if (!p) return null;
   return (
-    <a className={'project-card ' + (featured ? 'featured' : '')} href={route(l, 'case/' + id)}>
+    <a className={'project-card ' + (featured ? 'featured' : '')} href={route(l, 'case/' + id)} data-reveal>
       <div className="project-image">
         {p.image && <img src={p.image} alt={`${p.client} — ${p.title}`} loading="lazy" width="1200" height="750" />}
         <span className="project-open" aria-label={copy[l].view}><Arrow /></span>
@@ -114,44 +114,66 @@ function Work({ l, all = false }: { l: Locale; all?: boolean }) {
         </div>
         {!all && <a className="text-link" href={route(l, 'case')}>{t.all} <Arrow /></a>}
       </div>
-      <div className="projects-grid">{ids.map((id, i) => <ProjectCard key={id} l={l} id={id} featured={!all && i === 0} />)}</div>
+      <div className="projects-grid" data-reveal-group>{ids.map((id, i) => <ProjectCard key={id} l={l} id={id} featured={!all && i === 0} />)}</div>
     </section>
   );
 }
 
 /** Le seul argument de l'accueil : le constat, la reponse, deux sorties. Un bandeau, et
     non la dramaturgie du master transposee section par section, qui rendait l'accueil
-    illisible et remontrait les projets et les expertises deja presents ailleurs. */
+    illisible et remontrait les projets et les expertises deja presents ailleurs.
+
+    Compose en deux temps depuis le 14/09/2026 : le constat sur creme avec l'escalier qui
+    va chercher les bords de l'ecran, puis la reponse en respiration rose pleine largeur.
+    Avant, les deux tenaient dans un bandeau creme et la phrase d'Audry se lisait comme une
+    colonne de texte a cote d'une autre. Voir composition.css, points 3 et 4. */
 function Argument({ l }: { l: Locale }) {
   const t = copy[l];
-  const heights = [150, 210, 280, 470];
   const tones = ['bg-mint', 'bg-cyan', 'bg-pink', 'bg-yellow'];
   return (
-    <section className="argument section" aria-labelledby="argument-title">
-      <Micro left={t.labels.act1} right={t.labels.context} />
-      <h2 id="argument-title">{t.attention.title}</h2>
-      <div className="stairs" role="list">
-        {t.attention.bars.map(([value, label], i) => (
-          <div key={label} role="listitem" className={`stair ${tones[i]}`} style={{ minHeight: heights[i] }}><b>{value}</b><span>{label}</span></div>
-        ))}
-        <p className="note">{t.attention.note}</p>
-      </div>
-      <p className="stairs-answer">{t.attention.lead}</p>
-      <div className="argument-answer">
-        <div>
-          <span className="micro-inline">{t.labels.act3}</span>
-          <h3 className="as-h2">{t.promise.title}</h3>
+    <>
+      <section className="argument section" aria-labelledby="argument-title">
+        <Micro left={t.labels.act1} right={t.labels.context} />
+        <h2 id="argument-title" data-reveal>{t.attention.title}</h2>
+        <p className="stairs-note">{t.attention.note}</p>
+        <div className="stairs bleed" role="list" data-reveal-group>
+          {t.attention.bars.map(([value, label], i) => (
+            <div key={label} role="listitem" data-reveal="grow" className={`stair ${tones[i]}`}><b>{value}</b><span>{label}</span></div>
+          ))}
         </div>
-        <div className="promise-copy">
-          <p className="lead">{t.promise.text}</p>
-          <p>{t.promise.more}</p>
-          <p className="promise-results">{t.promise.results}</p>
-          <div className="argument-links">
+        <p className="stairs-answer" data-reveal>{t.attention.lead}</p>
+      </section>
+      <section className="answer bg-pink" aria-labelledby="answer-title">
+        <div className="answer-head">
+          <span className="micro-inline">{t.labels.act3}</span>
+          <h2 id="answer-title" className="as-h2" data-reveal>{t.promise.title}</h2>
+        </div>
+        <div className="answer-copy">
+          <div>
+            <p className="lead">{t.promise.text}</p>
+          </div>
+          <div>
+            <p>{t.promise.more}</p>
+            <p className="answer-results">{t.promise.results}</p>
+          </div>
+          <div className="answer-links">
             <a className="text-link" href={route(l, 'services')}>{t.nav[1]} <Arrow /></a>
             <a className="text-link" href={route(l, 'about')}>{t.agencyLink} <Arrow /></a>
           </div>
         </div>
-      </div>
+      </section>
+    </>
+  );
+}
+
+/** Une respiration : une phrase seule sur couleur pleine, entre deux passages denses.
+    La charte le dit ainsi : « entre deux slides denses, il y a toujours une slide qui ne
+    porte qu'une phrase ». Le site n'en avait qu'une, sur la page agence. */
+function Breath({ tone, text, note }: { tone: string; text: string; note?: string }) {
+  return (
+    <section className={`breath ${tone}`}>
+      <p data-reveal>{text}</p>
+      {note && <p className="note">{note}</p>}
     </section>
   );
 }
@@ -173,17 +195,31 @@ function OffersFull({ l }: { l: Locale }) {
         <article key={o.id} id={o.id} className="offer-full">
           <div className="offer-copy">
             <span className="offer-number">0{i + 1}</span>
-            <h2>{o.title}</h2>
+            <h2 data-reveal>{o.title}</h2>
             <p className="lead">{o.short}</p>
             <p>{o.text}</p>
           </div>
-          <dl className={`offer-meta ${offerTones[o.id]}`}>
-            <dt>{t.offerFields.who}</dt><dd>{o.who}</dd>
-            <dt>{t.offerFields.when}</dt><dd>{o.when}</dd>
-            <dt>{t.offerFields.deliver}</dt><dd>{o.deliver}</dd>
-            <dt>{t.offerFields.proof}</dt>
-            <dd className="chips">{offerProof[o.id].map((s) => cases[l][s] && <a key={s} className="chip" href={route(l, 'case/' + s)}>{cases[l][s].client}</a>)}</dd>
-          </dl>
+          {/* La colonne de droite porte les reperes puis la preuve en images. Les pastilles
+              de texte ne montraient rien : sur une page d'expertises, la preuve d'un savoir
+              faire est le projet livre, donc son visuel. */}
+          <div className="offer-aside" data-reveal>
+            <dl className={`offer-meta ${offerTones[o.id]}`}>
+              <dt>{t.offerFields.who}</dt><dd>{o.who}</dd>
+              <dt>{t.offerFields.when}</dt><dd>{o.when}</dd>
+              <dt>{t.offerFields.deliver}</dt><dd>{o.deliver}</dd>
+            </dl>
+            <div className="offer-proof">
+              <span className="offer-proof-label">{t.offerFields.proof}</span>
+              <div className="offer-proof-grid">
+                {offerProof[o.id].map((s) => cases[l][s] && (
+                  <a key={s} href={route(l, 'case/' + s)} aria-label={`${cases[l][s].client} — ${cases[l][s].title}`}>
+                    {cases[l][s].image && <img src={cases[l][s].image} alt="" width="600" height="420" loading="lazy" />}
+                    <span>{cases[l][s].client}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
         </article>
       ))}
     </section>
@@ -192,8 +228,8 @@ function OffersFull({ l }: { l: Locale }) {
 
 function Cascade({ items, tones }: { items: [string, string][]; tones: string[] }) {
   return (
-    <div className="cascade">
-      {items.map(([title, text], i) => <article key={title} className={tones[i]}><h3>{title}</h3><p>{text}</p></article>)}
+    <div className="cascade" data-reveal-group>
+      {items.map(([title, text], i) => <article key={title} data-reveal className={tones[i]}><h3>{title}</h3><p>{text}</p></article>)}
     </div>
   );
 }
@@ -205,9 +241,9 @@ function Method({ l }: { l: Locale }) {
     <section className="method section">
       <Micro left={t.labels.method} right={t.labels.context} />
       <h2>{t.method.title}</h2>
-      <div className="bands">
+      <div className="bands" data-reveal-group>
         {t.method.steps.map(([word, line, more], i) => (
-          <div key={word} className={`band ${tones[i]}`}><b>{word}</b><div><p>{line}</p><p>{more}</p></div></div>
+          <div key={word} data-reveal className={`band ${tones[i]}`}><b>{word}</b><div><p>{line}</p><p>{more}</p></div></div>
         ))}
       </div>
       <div className="principles">
@@ -259,8 +295,8 @@ function Facts({ l }: { l: Locale }) {
   const tones = ['bg-yellow', 'bg-mint', 'bg-cyan', 'bg-pink'];
   return (
     <section className="facts-section section">
-      <div className="facts">
-        {t.facts.map(([value, label], i) => <div key={label} className={`fact ${tones[i]}`}><b>{value}</b><span>{label}</span></div>)}
+      <div className="facts" data-reveal-group>
+        {t.facts.map(([value, label], i) => <div key={label} data-reveal className={`fact ${tones[i]}`}><b>{value}</b><span>{label}</span></div>)}
       </div>
       <p className="clients lead">{t.clients}</p>
     </section>
@@ -289,12 +325,12 @@ function Agency({ l, full = false }: { l: Locale; full?: boolean }) {
         <>
           <section className="mission section">
             <Micro left={t.missionLabel} right={t.labels.context} />
-            <p className="mission-text">{t.mission}</p>
+            <div className="mission-card" data-reveal><p className="mission-text">{t.mission}</p></div>
           </section>
           <section className="values-section section">
             <h2>{t.valuesTitle}</h2>
-            <div className="values">
-              {t.values.map(([title, desc], i) => <article key={title}><span className="eyebrow">0{i + 1}</span><h3>{title}</h3><p>{desc}</p></article>)}
+            <div className="values" data-reveal-group>
+              {t.values.map(([title, desc], i) => <article key={title} data-reveal><span className="eyebrow">0{i + 1}</span><h3>{title}</h3><p>{desc}</p></article>)}
             </div>
           </section>
         </>
@@ -422,6 +458,7 @@ export function SitePage({ l, path = '' }: { l: Locale; path?: string }) {
               <h1>{t.expertise}</h1>
               <p className="lead">{t.expertiseIntro}</p>
             </div>
+            <Breath tone="bg-cyan" text={t.offersTitle} note={t.offersLead} />
             <OffersFull l={l} />
             <Faq l={l} items={t.faqServices} title={loyalty[l].faqTitle} />
             <LoyaltyBridge l={l} />
