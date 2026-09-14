@@ -1,0 +1,16 @@
+/* Polices du site, hébergées localement. Barlow, Barlow Condensed et Caveat sont
+   publiées par Google Fonts sous licence SIL Open Font License, qui autorise
+   l'embarquement sur un site. Les fichiers font-0 à font-5 viennent de la V16,
+   les barlow-condensed-* ont été ajoutés le 14/09/2026 pour suivre la charte
+   des présentations (Light pour le corps sur bloc, Medium pour les labels,
+   SemiBold pour les accroches, ExtraBold pour les titres de cartes). */
+@font-face{font-family:'Barlow';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/font-0.ttf) format('truetype')}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/font-1.ttf) format('truetype')}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/font-2.ttf) format('truetype')}
+@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/font-3.ttf) format('truetype')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:300;font-display:swap;src:url(/fonts/barlow-condensed-300.ttf) format('truetype')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/barlow-condensed-500.ttf) format('truetype')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/barlow-condensed-600.ttf) format('truetype')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:800;font-display:swap;src:url(/fonts/barlow-condensed-800.ttf) format('truetype')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:900;font-display:swap;src:url(/fonts/font-4.ttf) format('truetype')}
+@font-face{font-family:'Caveat';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/font-5.ttf) format('truetype')}

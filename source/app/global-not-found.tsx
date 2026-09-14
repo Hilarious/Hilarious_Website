@@ -1,0 +1,2 @@
+import './globals.css';
+export default function GlobalNotFound(){return <html lang="fr"><head><title>Page introuvable | Hilarious</title><meta name="robots" content="noindex,nofollow"/><link rel="stylesheet" href="/fonts/fonts.css"/></head><body><main className="not-found"><span className="eyebrow">Hilarious · 404</span><h1>ON S’EST<br/>PERDUS ?</h1><p>Cette page n’existe pas, ou a changé d’adresse.</p><a className="button" href="/fr/">Retour à l’accueil ↗</a></main></body></html>}

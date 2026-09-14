@@ -1,0 +1,48 @@
+/* Loyalty journey: generous type, editorial proof, approachable brief. */
+.loyalty-hero,.loyalty-bridge,.loyalty-needs,.loyalty-method,.loyalty-faq,.lead-section{color:var(--play-purple)}
+.loyalty-hero{background:var(--yellow)}
+.loyalty-hero h1{font-size:clamp(56px,7.5vw,116px);max-width:1100px;overflow-wrap:break-word}
+.loyalty-hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:48px;margin-top:40px}
+.loyalty-hero-bottom .lead{max-width:620px}
+.loyalty-link{display:inline-flex;align-items:center;gap:22px;min-height:48px;border:0;border-bottom:1px solid currentColor;background:transparent;color:inherit;padding:12px 0;font:600 18px 'Barlow',sans-serif;cursor:pointer;text-align:left}
+.loyalty-link span{font-size:24px;transition:transform .2s}
+.loyalty-link:hover span{transform:translateX(4px)}
+.loyalty-link:focus-visible,.lead-form :focus-visible{outline:2px solid var(--play-purple);outline-offset:5px}
+.loyalty-bridge{display:grid;grid-template-columns:1.1fr 1fr;gap:8%;align-items:center;background:#fff;border-top:1px solid #542a9325}
+.loyalty-bridge h2{font-size:clamp(46px,5vw,76px)}
+.loyalty-bridge .loyalty-link{margin-top:24px}
+.loyalty-needs h2,.loyalty-method h2,.loyalty-faq h2{font-size:clamp(46px,5.5vw,82px);max-width:960px}
+.loyalty-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:38px;margin-top:52px}
+.loyalty-columns article{border-top:1px solid #542a9344;padding-top:22px;min-width:0}
+.loyalty-columns .eyebrow{color:var(--play-pink)}
+.loyalty-columns h3{font-family:'Barlow Condensed',sans-serif;font-size:34px;font-weight:800;text-transform:uppercase;margin:12px 0}
+.loyalty-columns p{max-width:400px}
+.loyalty-columns .text-link{margin-top:20px;font-size:16px}
+.loyalty-proof{background:var(--play-purple);color:white;display:grid;grid-template-columns:1.2fr 1fr;gap:8%;align-items:center}
+.loyalty-proof .eyebrow{color:var(--yellow)}
+.loyalty-proof h2{font-size:clamp(48px,5vw,78px)}
+.loyalty-proof img{margin-top:32px;width:100%;height:auto;border-radius:2px 36px 2px 2px}
+.proof-copy article{padding:24px 0;border-top:1px solid #ffffff55}
+.proof-copy h3{color:var(--yellow);font-size:22px;margin-bottom:12px}
+.loyalty-method .loyalty-columns{grid-template-columns:repeat(4,minmax(0,1fr))}
+.measurement-note{max-width:750px;margin:36px 0 16px;font-size:18px}
+.loyalty-faq{background:#f8f5fc;display:grid;grid-template-columns:1fr 1fr;gap:8%}
+.loyalty-faq details{border-top:1px solid #542a9344;padding:22px 0}
+.loyalty-faq summary{font-size:20px;font-weight:600;cursor:pointer}
+.loyalty-faq details p{margin-top:16px}
+.lead-section{display:grid;grid-template-columns:1fr 1fr;gap:9%;background:var(--yellow);align-items:start}
+.lead-section h2{font-size:clamp(48px,5.5vw,84px);overflow-wrap:break-word}
+.lead-section .lead{margin:28px 0;max-width:530px}
+.lead-form{min-width:0;background:white;padding:36px;border-radius:2px 32px 2px 2px}
+.lead-form label{display:block;margin:22px 0 8px;font-size:17px;font-weight:600}
+.lead-form input,.lead-form select,.lead-form textarea{width:100%;min-width:0;border:1px solid #542a9360;border-radius:0;background:#fff;color:var(--play-purple);font:400 17px 'Barlow',sans-serif;padding:12px;min-height:46px;box-sizing:border-box}
+.lead-form textarea{resize:vertical}
+.lead-form select{white-space:normal}
+.lead-form .lead-delivery{font-size:15px;line-height:1.5;margin-top:22px}
+.lead-form>p:first-child{font-size:15px}
+.brief-ready{margin-top:24px;border-top:1px solid #542a9344;padding-top:20px}
+.brief-ready textarea{margin-top:14px}
+.entrance-edition.entrance-loyalty{font-size:14px;text-decoration:underline;text-underline-offset:4px;letter-spacing:0;text-transform:none;max-width:88%}
+@media(max-width:1100px){.desktop-nav{gap:18px;font-size:15px}.loyalty-method .loyalty-columns{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.loyalty-hero-bottom{display:block;margin-top:28px}.loyalty-hero-bottom .loyalty-link{margin-top:24px}.loyalty-bridge,.loyalty-proof,.loyalty-faq,.lead-section{grid-template-columns:1fr;gap:34px}.loyalty-columns,.loyalty-method .loyalty-columns{grid-template-columns:1fr;gap:28px;margin-top:32px}.loyalty-bridge h2,.loyalty-faq h2,.lead-section h2{font-size:clamp(40px,11vw,64px)}.lead-form{padding:24px 18px}.lead-section .lead{font-size:21px}.entrance-edition.entrance-loyalty{font-size:13px;bottom:12px}.loyalty-hero h1{font-size:clamp(44px,12vw,76px)}}
+@media(prefers-reduced-motion:reduce){.loyalty-link span{transition:none}}

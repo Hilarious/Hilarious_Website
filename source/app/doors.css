@@ -1,0 +1,130 @@
+/* One yellow token; the original yellow baked into the entrance sprite is keyed out. */
+:root{--play-purple:#542a93;--play-pink:#ec4fa8;--play-aqua:#087e87;--play-paper:#fff;--ink:#432577}
+.brand img{width:64px;height:66px;object-fit:contain}.agency-logo{width:130px;height:auto;margin-bottom:30px}.header,.footer-top{background:#fff;color:var(--play-purple)}.header-cta,.button{background:var(--play-purple);color:white}.agency,.values{background:var(--play-purple)}.contact,.case-heading,.page-title{background:#f8f5fc;color:var(--play-purple)}.contact-circle{border-color:var(--play-purple)}.contact-circle:hover{background:var(--play-purple);color:#fff}.back-to-doors{padding:12px 5.3vw;background:#f8f5fc;color:var(--play-purple);font-size:14px}.filter-definitions{position:absolute;pointer-events:none}.door-experience{--ease:cubic-bezier(.22,1,.36,1);min-height:100svh;display:flex;flex-direction:column;color:var(--play-purple);background:#fff}.door-masthead{height:90px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;z-index:5;background:#fff}.masthead-caption{font-size:14px;letter-spacing:.13em;font-weight:600}.door-masthead .languages{font-size:14px;gap:18px}.door-main{flex:1;min-height:0;position:relative}.entrance{position:relative;min-height:620px;height:calc(100svh - 174px);overflow:hidden;background:#fff;transform-origin:72% 64%;transition:opacity .65s ease,transform 1.1s var(--ease);z-index:3}.entrance-text{position:absolute;left:6vw;top:48%;transform:translateY(-50%);z-index:2;pointer-events:none;transition:opacity .5s,transform .9s var(--ease)}.entrance-location{font-size:14px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;margin-bottom:32px}.entrance h1{font-size:clamp(60px,7.3vw,128px);line-height:1;letter-spacing:-.02em}.entrance h1 span{display:block}.entrance h1 span:nth-child(1){color:var(--play-purple)}.entrance h1 span:nth-child(2){color:var(--play-pink)}.entrance h1 span:nth-child(3){color:var(--play-aqua)}.entrance-note{font-family:'Caveat',cursive;font-size:35px;margin-top:25px;transform:rotate(-5deg);transform-origin:left center}.entrance-portal{position:absolute;right:1vw;bottom:18px;width:44%;height:95%;max-height:760px;cursor:pointer;display:block;transform-origin:60% 75%;transition:transform .9s var(--ease)}.entrance-sprite{position:absolute;left:0;right:0;bottom:0;aspect-ratio:600/803;overflow:hidden;filter:url(#door-yellow-key)}.sprite-strip{display:block;max-width:none;height:100%;width:2100%;transform:translateX(-95.238095%);pointer-events:none}.entrance-sprite .sprite-strip{width:3100%;transform:translateX(-96.774194%)}.entrance-balloon{position:absolute;width:27%;height:auto;left:0;top:2%;z-index:1;animation:balloon-drift 6s ease-in-out infinite;transform-origin:bottom center}.entrance-invitation,.room-enter{position:absolute;left:50%;transform:translateX(-50%) rotate(-4deg);display:flex;align-items:center;gap:20px;background:var(--yellow);color:var(--play-purple);font-family:'Caveat',cursive;font-size:29px;padding:9px 23px;white-space:nowrap;z-index:3;border-radius:48% 52% 49% 51% / 12% 17% 13% 15%;transition:transform .45s var(--ease),opacity .25s}.entrance-invitation{bottom:5px}.entrance-invitation span,.room-enter span{font-family:'Barlow',sans-serif;font-size:25px}.entrance-portal:hover .entrance-invitation,.room-portal:hover .room-enter{transform:translateX(-50%) rotate(2deg) scale(1.06)}.entrance-edition{position:absolute;bottom:25px;left:6vw;font-size:12px;letter-spacing:.1em}.door-navigation{height:84px;flex-shrink:0;background:#fff;display:grid;grid-template-columns:repeat(4,1fr) 1.35fr;z-index:5;border-top:1px solid #542a931a}.door-navigation>a{display:flex;align-items:center;gap:16px;padding:16px 25px;transition:background .3s,color .3s;position:relative}.door-navigation>a:hover{background:#f8f5fc}.nav-count{font-family:'Caveat',cursive;font-size:20px;color:var(--play-pink)}.door-navigation>a>span:nth-child(2){font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;font-size:25px;font-weight:900}.nav-arrow{margin-left:auto;font-size:24px;transition:transform .4s var(--ease)}.door-navigation>a:hover .nav-arrow{transform:translate(4px,-4px)}.door-nav-contact{font-size:16px;justify-content:center}.door-gallery{height:calc(100svh - 174px);min-height:620px;display:none;flex-direction:column;background:#fff;overflow:hidden}.gallery-topline{height:60px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;gap:20px;background:#fff}.gallery-topline a{font-size:14px;font-weight:500}.gallery-topline p{font:27px 'Caveat',cursive}.rooms-track{display:flex;flex:1;min-height:0;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;outline-offset:-4px!important;overscroll-behavior-x:contain;touch-action:pan-x pan-y}.rooms-track::-webkit-scrollbar{display:none}.door-room{position:relative;flex:0 0 100%;height:100%;min-width:0;scroll-snap-align:center;isolation:isolate;overflow:hidden;contain:layout paint;transform-origin:50% 60%;transition:transform 1s var(--ease),opacity .5s}.room-wall{position:absolute;inset:0 0 22%;background-image:var(--wall);background-size:cover;background-position:center bottom;z-index:-2}.room-floor{position:absolute;inset:78% 0 0;background-image:var(--floor);background-size:cover;background-position:center top;z-index:-2}.room-caption{position:absolute;left:5vw;top:30px;z-index:3;max-width:min(440px,38vw);background:#ffffffed;color:var(--play-purple);padding:16px 24px 20px;border-radius:5px 28px 28px 28px;pointer-events:none;transform:translate3d(calc(var(--drift,0) * 36px),0,0);transition:opacity .4s}.room-caption p{font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px;font-weight:600}.room-caption h2{font-size:clamp(30px,3.2vw,50px);line-height:1.03}.room-decoration{position:absolute;left:0;bottom:-3%;height:115%;width:100%;object-fit:contain;object-position:center bottom;pointer-events:none;z-index:0;transform:translate3d(calc(var(--drift,0) * -55px),0,0)}.room-portal{position:absolute;left:50%;bottom:calc(22% - 24px);transform:translateX(-50%);height:76%;aspect-ratio:360/728;z-index:2;cursor:pointer}.room-sprite{position:absolute;inset:0;overflow:hidden}.room-enter{bottom:-53px;font-size:25px;padding:10px 22px}.phone-portal{aspect-ratio:360/666}.phone-portal .sprite-strip{transform:translateX(0)}.crm-portal{aspect-ratio:360/622}.gallery-controls{height:72px;display:flex;align-items:center;gap:28px;padding:0 5vw;flex-shrink:0;background:#fff;z-index:4}.door-count{font:900 30px 'Barlow Condensed',sans-serif;font-variant-numeric:tabular-nums}.door-count b{font-weight:900}.door-count span{font:400 16px 'Barlow',sans-serif;opacity:.6;margin-left:5px}.gallery-hint{font-size:14px;opacity:.8}.door-dots{display:flex;gap:10px;margin-left:auto}.door-dots a{display:block;background:#542a9333;width:9px;height:9px;border-radius:50%;position:relative;transition:transform .5s var(--ease),background .3s}.door-dots a::after{content:'';position:absolute;inset:-12px}.door-dots a[aria-current]{background:var(--play-pink);transform:scale(1.5)}.gallery-arrows{display:flex;gap:10px;margin-left:10px}.gallery-arrows a{width:45px;height:45px;border:1px solid #542a9355;border-radius:50%;font-size:25px;display:flex;justify-content:center;align-items:center;transition:background .3s,transform .3s}.gallery-arrows a:hover{background:var(--yellow);transform:scale(1.08)}.gallery-arrows a[aria-disabled=true]{opacity:.25;pointer-events:none}.door-curtain{position:fixed;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:100;transition:opacity .35s ease}.is-departing .door-curtain{opacity:1}.room-opening{transform:scale(1.65)}.room-opening .room-caption,.room-opening .room-enter{opacity:0}.room-opening .sprite-strip{animation:room-open .75s steps(20) forwards}.room-opening .phone-portal .sprite-strip{animation:phone-open .75s steps(20) forwards}.is-entering .entrance-sprite .sprite-strip{animation:entrance-open .85s steps(30) forwards}.is-entering .entrance-text{opacity:0;transform:translate(-60px,-50%)}.is-entering .entrance-invitation{opacity:0}.is-entering .entrance-portal{transform:scale(1.12)}.is-revealing .entrance{opacity:0;transform:scale(1.3);pointer-events:none}.is-inside .entrance{display:none}.is-entering .door-gallery,.is-inside .door-gallery{display:flex}.is-entering .entrance{position:absolute;inset:0;height:100%;width:100%}.motion-ready .rooms-track.is-sliding{scroll-snap-type:none;scroll-behavior:auto}.door-main:has(#doors:target) .door-gallery,.door-main:has(.door-room:target) .door-gallery{display:flex}.door-experience:not(.motion-ready) .door-main:has(#doors:target) .entrance,.door-experience:not(.motion-ready) .door-main:has(.door-room:target) .entrance{display:none}
+@keyframes entrance-open{from{transform:translateX(-96.774194%)}to{transform:translateX(0)}}@keyframes room-open{from{transform:translateX(-95.238095%)}to{transform:translateX(0)}}@keyframes phone-open{from{transform:translateX(0)}to{transform:translateX(-95.238095%)}}@keyframes balloon-drift{0%,100%{transform:rotate(-3deg) translateY(0)}50%{transform:rotate(3deg) translateY(-10px)}}
+@media(hover:hover){.room-portal:hover .sprite-strip{animation:door-peek .35s steps(4) forwards}.phone-portal:hover .sprite-strip{animation:phone-peek .35s steps(4) forwards}.room-opening .room-portal .sprite-strip{animation:room-open .75s steps(20) forwards}.room-opening .phone-portal .sprite-strip{animation:phone-open .75s steps(20) forwards}}
+@keyframes door-peek{from{transform:translateX(-95.238095%)}to{transform:translateX(-76.190476%)}}@keyframes phone-peek{from{transform:translateX(0)}to{transform:translateX(-19.047619%)}}
+@media(max-width:1000px){.door-navigation>a{padding:14px;gap:10px}.door-navigation>a>span:nth-child(2){font-size:22px}.door-nav-contact{display:none!important}.door-navigation{grid-template-columns:repeat(4,1fr);height:76px}.entrance,.door-gallery{height:calc(100svh - 166px)}.entrance h1{font-size:8vw}.entrance-text{left:4vw}.entrance-portal{right:0;width:44vw}.entrance-note{font-size:28px}.room-caption{max-width:320px;top:20px;left:25px}.room-caption h2{font-size:34px}.gallery-hint{display:none}}
+@media(max-width:700px){.door-masthead{height:76px;padding:0 22px}.brand img{width:55px;height:57px}.masthead-caption{display:none}.door-masthead .languages{font-size:14px;gap:14px}.entrance{height:calc(100svh - 146px);min-height:650px}.entrance-text{left:24px;top:25px;transform:none}.entrance-location{font-size:13px;margin-bottom:18px}.entrance h1{font-size:clamp(39px,9vw,60px);line-height:1.03}.entrance h1 span{display:inline}.entrance h1 span::after{content:' ';white-space:pre}.entrance h1{max-width:440px}.entrance-note{font-size:26px;margin-top:13px}.entrance-portal{height:405px;width:300px;right:calc(50% - 150px);bottom:40px}.entrance-balloon{width:25%;left:-5%;top:0}.entrance-invitation{font-size:25px;bottom:-8px;padding:8px 18px}.entrance-edition{font-size:12px;bottom:12px;left:24px}.door-navigation{height:70px;grid-template-columns:repeat(4,1fr)}.door-navigation>a{padding:8px;justify-content:center;gap:0;flex-direction:column}.nav-count{font-size:16px;line-height:1}.door-navigation>a>span:nth-child(2){font-size:19px}.nav-arrow{display:none}.door-gallery{height:calc(100svh - 146px);min-height:610px}.gallery-topline{height:60px;padding:10px 22px;gap:12px}.gallery-topline p{display:none}.gallery-topline a{font-size:14px}.room-caption{top:18px;left:22px;right:22px;max-width:none;padding:12px 18px}.room-caption h2{font-size:28px;max-width:none}.room-caption p{font-size:14px}.room-portal{height:60%;bottom:calc(22% - 24px)}.room-decoration{width:180%;left:-40%;max-width:none;height:100%;object-fit:cover;object-position:center bottom;bottom:-2%}.gallery-controls{height:66px;padding:0 22px;gap:12px}.door-count{font-size:26px}.door-dots{gap:10px;margin-left:auto}.gallery-arrows{gap:6px;margin-left:0}.gallery-arrows a{height:36px;width:36px;font-size:22px}.is-entering .entrance-text{transform:translateY(-30px)}.back-to-doors{padding:12px 24px}}
+@media(prefers-reduced-motion:reduce){.rooms-track{scroll-behavior:auto}.room-decoration,.room-caption{transform:none}.entrance-balloon{animation:none}.room-opening{transform:none}}
+
+/* Finish: one continuous home surface, restrained colour and a real doorway reveal. */
+.door-experience{--home-surface:var(--yellow)}
+.door-experience:not(.is-inside) .door-masthead,.door-experience:not(.is-inside) .door-navigation,.entrance{background:var(--home-surface)}
+.door-masthead,.door-navigation{transition:background .65s ease}
+.entrance h1 span:nth-child(n){color:var(--play-purple)}
+.entrance h1 span:nth-child(2){color:transparent;-webkit-text-stroke:1.5px var(--play-purple)}
+.entrance-note{color:#a82073}.entrance-invitation{background:var(--play-purple);color:white;box-shadow:0 9px 22px #542a9320}
+.entrance-sprite{filter:url(#door-yellow-key)}
+.entrance,.door-gallery{min-height:480px}
+.entrance-portal{width:min(44vw,calc((100svh - 210px) * .747));right:5vw;height:calc(100% - 35px)}
+.entrance-text{top:47%}.entrance h1{font-size:clamp(58px,7.2vw,120px)}
+.entrance-invitation{bottom:0}.entrance-location{margin-bottom:24px}.entrance-note{margin-top:20px}
+.entrance-portal,.room-portal{touch-action:manipulation}
+.room-window{position:absolute;inset:8% 15% 4%;overflow:hidden;background:var(--play-purple);opacity:0;transition:opacity .2s}
+.room-window img{height:100%;width:100%;object-fit:cover;transform:scale(1.15);transition:transform 1s var(--ease)}
+.room-portal:hover .room-window,.room-opening .room-window{opacity:1}
+.room-opening{transform:none}.room-opening .room-portal{transform:translateX(-50%) scale(1.16);transition:transform .9s var(--ease)}
+.room-opening .room-window img{transform:scale(1)}
+.room-opening .room-caption{transform:translateY(-20px);opacity:0;transition:opacity .3s,transform .6s var(--ease)}
+.room-opening .room-decoration{opacity:.55;transition:opacity .8s}
+.motion-ready .sprite-strip{animation:none!important}
+.rooms-track{cursor:grab}.rooms-track.is-dragging{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto;user-select:none}.is-dragging .room-portal{pointer-events:none}
+.room-portal{cursor:pointer}.rooms-track.is-sliding .room-decoration{will-change:transform}.room-caption{transition:opacity .4s}
+.is-entering .entrance-portal{transform:scale(1.08)}.is-revealing .entrance{transform:scale(1.6);opacity:0;transition:transform .85s var(--ease),opacity .65s ease}
+.is-entering .door-gallery{animation:gallery-arrive 1.35s var(--ease) both}
+@keyframes gallery-arrive{0%,40%{transform:scale(.96);opacity:.2}100%{transform:scale(1);opacity:1}}
+@view-transition{navigation:auto}
+.door-masthead>.brand,.header>.brand{view-transition-name:hilarious-logo}
+::view-transition-group(root){animation-duration:.7s;animation-timing-function:cubic-bezier(.22,1,.36,1)}
+::view-transition-old(root){animation:scene-out .7s ease both}
+::view-transition-new(root){animation:scene-through-door .7s cubic-bezier(.22,1,.36,1) both}
+::view-transition-group(hilarious-logo){animation-duration:.7s}
+@keyframes scene-out{to{opacity:0;transform:scale(1.07)}}
+@keyframes scene-through-door{from{clip-path:inset(15% 39% 12% 39% round 4px);opacity:.4;transform:scale(.97)}to{clip-path:inset(0 round 0);opacity:1;transform:scale(1)}}
+@media(max-width:1000px) and (min-width:701px){.entrance h1{font-size:7.8vw}.entrance-portal{right:1vw}}
+@media(max-width:700px){.entrance{min-height:600px}.door-gallery{min-height:560px}.entrance-portal{height:370px;width:276px;right:calc(50% - 138px);bottom:38px}.entrance-text{top:20px}.entrance h1{font-size:clamp(38px,8.7vw,58px)}.entrance-note{margin-top:10px}.entrance-location{margin-bottom:14px}.entrance-balloon{left:-8%}.room-window{inset:8% 15% 4%}.room-caption{padding:12px 18px}.room-portal{height:57%}.door-navigation>a>span:nth-child(2){font-size:18px}}
+@media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root),::view-transition-group(hilarious-logo){animation:none!important}.room-opening .room-portal{transform:translateX(-50%)}.is-entering .door-gallery{animation:none}.room-window img{transform:none}}
+
+/* Layout containment: absolute hero copy must still respect its column. */
+.entrance-text{width:49%;max-width:700px;min-width:0}
+.entrance h1{overflow-wrap:normal}
+.room-caption h2{text-wrap:pretty}
+@media(max-width:700px){.entrance-text{left:24px;right:24px;width:auto;max-width:none}.entrance h1{max-width:100%;font-size:clamp(32px,9vw,58px);line-height:1.05}.entrance h1 span{display:block}.entrance h1 span::after{content:none}.entrance-note{font-size:25px}.entrance-portal{height:360px;max-height:55%;width:min(276px,72vw);bottom:38px}}
+@media(max-width:700px){.door-navigation>a{min-width:0;padding:7px 4px;gap:3px}.door-navigation>a>span:nth-child(2){font-size:17px;line-height:1.05;text-align:center}.nav-count{font-size:14px}.door-count span{margin-left:2px}.gallery-controls{padding:0 14px;gap:8px}.door-dots{gap:9px}.gallery-arrows{gap:5px}.gallery-arrows a{width:34px;height:34px}}
+.section>*,.project-caption>*,.footer-top>*{min-width:0}
+.case-heading h1,.page-title h1,.agency h2,.contact h2{overflow-wrap:break-word}
+.contact-email{max-width:100%;overflow-wrap:anywhere}
+@media(max-width:700px){.entrance-portal{right:50%;translate:50% 0}.page-title h1{font-size:clamp(48px,12vw,74px)}.section h2{font-size:clamp(42px,11vw,78px)}}
+@media(min-width:701px) and (max-width:1000px){.room-caption{max-width:calc(50% - 115px);padding:15px 20px}.room-caption h2{font-size:clamp(27px,3.5vw,35px)}}
+.door-count{white-space:nowrap;flex-shrink:0}.gallery-arrows{flex-shrink:0}
+@media(max-width:360px){.door-dots{gap:7px}.door-dots a{width:7px;height:7px}.gallery-topline{padding:10px 16px}.gallery-topline a{font-size:13px}.gallery-topline a:last-child{text-align:right}}
+/* Scenery is anchored to the wall/floor boundary, with its original proportions. */
+.scene-art{position:absolute;pointer-events:none;overflow:hidden;max-width:none;z-index:1;width:auto;height:auto}
+.scene-art.wall-left{left:8%;bottom:31%;width:29%;max-height:42%}
+.scene-art.wall-right{right:7%;bottom:32%;width:29%;max-height:44%}
+.scene-art.floor-left{left:13%;bottom:6%;height:34%;max-width:27%}
+.scene-art.floor-right{right:9%;bottom:7%;height:57%;max-width:30%}
+.case-he2b .wall-left{left:29%;width:12%;bottom:36%;max-height:32%}
+.case-he2b .floor-left{left:10%;height:37%}
+.case-he2b .floor-right{height:62%;right:12%}
+.case-lyreco .wall-left{width:15%;left:15%;bottom:30%}
+.case-lyreco .floor-right{height:40%;right:0;max-width:34%}
+.case-bic .wall-left,.case-bic .wall-right{max-height:38%;bottom:27%;width:27%}
+@media(max-width:700px){
+ .scene-art.wall-left{left:2%;width:30%;bottom:38%;max-height:28%}
+ .scene-art.wall-right{right:2%;width:30%;bottom:39%;max-height:28%}
+ .scene-art.floor-left{left:0;bottom:10%;height:25%;max-width:29%}
+ .scene-art.floor-right{right:0;bottom:18%;height:39%;max-width:38%}
+ .case-he2b .wall-left{left:5%;width:22%;bottom:47%;max-height:24%}
+ .case-he2b .floor-left{left:0;height:26%;bottom:18%}
+ .case-he2b .floor-right{right:0;height:49%;max-width:35%;bottom:18%}
+ .case-lyreco .wall-left{left:4%;width:22%;bottom:42%}
+ .case-lyreco .floor-right{height:25%;max-width:33%}
+ .case-bic .wall-left,.case-bic .wall-right{width:29%;max-height:30%;bottom:35%}
+}
+
+/* Preserve the split Art Direction after the legacy brand bridge above. */
+.agency{background:linear-gradient(90deg,var(--play-purple) 0 54%,var(--yellow) 54%)}
+.values{background:#fff}
+@media(max-width:1000px){.agency{background:var(--play-purple)}}
+
+/* Gallery controls share the same fine-line visual language as the inner pages. */
+.gallery-arrows a{
+ width:40px;height:40px;background:transparent;color:var(--play-purple);
+ border:1px solid #542a9366;font-size:20px;font-weight:400;box-shadow:none
+}
+.gallery-arrows a:hover{background:var(--yellow);color:var(--play-purple);border-color:var(--play-purple);transform:translateY(-2px)}
+.gallery-arrows a[aria-disabled=true]{background:transparent;color:var(--play-purple);opacity:.22}
+@media(max-width:700px){.gallery-arrows a{width:34px;height:34px;font-size:18px}}
+
+/* Mobile composition: move the balloon away from the left-aligned copy. */
+@media(max-width:700px){
+ .entrance-balloon{left:auto;right:-7%;top:7%;width:24%;transform-origin:bottom center}
+}
+
+/* Brand-drawn CTA arrow: avoids platform emoji rendering on iOS and Android. */
+.entrance-invitation .drawn-arrow,.room-enter .drawn-arrow{
+ position:relative;display:inline-block;width:25px;height:25px;flex:0 0 25px;
+ font-size:0;background:none;border:0;border-radius:0
+}
+.entrance-invitation .drawn-arrow::before,.room-enter .drawn-arrow::before{
+ content:"";position:absolute;left:3px;bottom:4px;width:22px;height:2px;
+ background:currentColor;border-radius:2px;transform:rotate(-45deg);transform-origin:center
+}
+.entrance-invitation .drawn-arrow::after,.room-enter .drawn-arrow::after{
+ content:"";position:absolute;right:1px;top:1px;width:11px;height:11px;
+ border-top:2px solid currentColor;border-right:2px solid currentColor
+}
+@media(max-width:700px){
+ .entrance-invitation .drawn-arrow,.room-enter .drawn-arrow{width:22px;height:22px;flex-basis:22px}
+ .entrance-invitation .drawn-arrow::before,.room-enter .drawn-arrow::before{width:19px}
+ .entrance-invitation .drawn-arrow::after,.room-enter .drawn-arrow::after{width:9px;height:9px}
+}
+
+.scene-art.floor-box{left:13%;bottom:7%;width:8%}.case-lyreco .floor-left{left:24%;height:27%}
+@media(max-width:700px){.scene-art.floor-box{left:1%;bottom:18%;width:10%}.case-lyreco .floor-left{left:14%;bottom:18%;height:21%;max-width:14%}}
+
+.contact .scene-art.wall-left{width:16%;left:20%;max-height:36%}@media(max-width:700px){.contact .scene-art.wall-left{width:23%;left:3%;max-height:27%;bottom:35%}}
+
+@media(prefers-reduced-motion:no-preference){.scene-art{transform:translate3d(calc(var(--drift,0) * -20px),0,0)}.room-opening .scene-art{opacity:.55;transition:opacity .8s}}

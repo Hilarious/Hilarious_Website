@@ -1,0 +1,13 @@
+# Dépendances et builds : se régénèrent, ne se versionnent pas
+source/node_modules/
+source/out/
+source/.next/
+source/*.tsbuildinfo
+source/.sites-runtime/
+source/.env*
+# La préversion compilée du 14/09 reste sur le disque, pas dans l'historique
+export-statique/
+# Configuration de l'hébergement ChatGPT Sites d'Audry : locale, pas publique
+source/.openai/
+# Fichiers techniques macOS
+.DS_Store
