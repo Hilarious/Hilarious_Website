@@ -119,24 +119,38 @@ function Work({ l, all = false }: { l: Locale; all?: boolean }) {
   );
 }
 
-/** Acte 1 et 2 : l'escalier de l'attention, repris des slides 2 et 4 du master. */
-function Attention({ l }: { l: Locale }) {
+/** Le seul argument de l'accueil : le constat, la reponse, deux sorties. Un bandeau, et
+    non la dramaturgie du master transposee section par section, qui rendait l'accueil
+    illisible et remontrait les projets et les expertises deja presents ailleurs. */
+function Argument({ l }: { l: Locale }) {
   const t = copy[l];
   const heights = [150, 210, 280, 470];
   const tones = ['bg-mint', 'bg-cyan', 'bg-pink', 'bg-yellow'];
   return (
-    <section className="attention section" aria-labelledby="attention-title">
+    <section className="argument section" aria-labelledby="argument-title">
       <Micro left={t.labels.act1} right={t.labels.context} />
-      <h2 id="attention-title">{t.attention.title}</h2>
+      <h2 id="argument-title">{t.attention.title}</h2>
       <div className="stairs" role="list">
         {t.attention.bars.map(([value, label], i) => (
           <div key={label} role="listitem" className={`stair ${tones[i]}`} style={{ minHeight: heights[i] }}><b>{value}</b><span>{label}</span></div>
         ))}
         <p className="note">{t.attention.note}</p>
       </div>
-      <div className="act2">
-        <span className="micro-inline">{t.labels.act2}</span>
-        <p className="lead">{t.attention.lead}</p>
+      <p className="stairs-answer">{t.attention.lead}</p>
+      <div className="argument-answer">
+        <div>
+          <span className="micro-inline">{t.labels.act3}</span>
+          <h3 className="as-h2">{t.promise.title}</h3>
+        </div>
+        <div className="promise-copy">
+          <p className="lead">{t.promise.text}</p>
+          <p>{t.promise.more}</p>
+          <p className="promise-results">{t.promise.results}</p>
+          <div className="argument-links">
+            <a className="text-link" href={route(l, 'services')}>{t.nav[1]} <Arrow /></a>
+            <a className="text-link" href={route(l, 'about')}>{t.agencyLink} <Arrow /></a>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -147,48 +161,6 @@ function Manifesto({ tone, text, note }: { tone: string; text: string; note?: st
     <section className={`manifesto ${tone}`}>
       <h2>{text}</h2>
       {note && <p className="note">{note}</p>}
-    </section>
-  );
-}
-
-function PromiseBlock({ l }: { l: Locale }) {
-  const t = copy[l];
-  return (
-    <section className="promise section">
-      <div>
-        <Micro left={t.labels.act3} right={t.labels.context} />
-        <h2>{t.promise.title}</h2>
-      </div>
-      <div className="promise-copy">
-        <p className="lead">{t.promise.text}</p>
-        <p>{t.promise.more}</p>
-        <p className="promise-results">{t.promise.results}</p>
-        <a className="text-link" href={route(l, 'services')}>{t.nav[1]} <Arrow /></a>
-      </div>
-    </section>
-  );
-}
-
-function OffersGrid({ l }: { l: Locale }) {
-  const t = copy[l];
-  return (
-    <section className="offers section">
-      <div className="section-heading">
-        <div>
-          <Micro left={t.labels.offer} right={t.labels.context} />
-          <h2>{t.offersTitle}</h2>
-          <p className="lead">{t.offersLead}</p>
-        </div>
-      </div>
-      <div className="offers-grid">
-        {t.offers.map((o) => (
-          <a key={o.id} className={`offer-card ${offerTones[o.id]}`} href={route(l, 'services') + '#' + o.id}>
-            <h3>{o.title}</h3>
-            <p>{o.short}</p>
-            <span className="text-link">{t.nav[1]} <Arrow /></span>
-          </a>
-        ))}
-      </div>
     </section>
   );
 }
@@ -421,11 +393,7 @@ export function SitePage({ l, path = '' }: { l: Locale; path?: string }) {
         <JsonLd data={organization(l)} />
         <JsonLd data={website(l)} />
         <DoorExperience l={l} projects={cases[l]} />
-        <Attention l={l} />
-        <Manifesto tone="bg-pink" text={t.manifesto.text} note={t.manifesto.note} />
-        <PromiseBlock l={l} />
-        <OffersGrid l={l} />
-        <Work l={l} />
+        <Argument l={l} />
         <LoyaltyBridge l={l} />
         <Closing l={l} />
         <Footer l={l} />
@@ -455,10 +423,7 @@ export function SitePage({ l, path = '' }: { l: Locale; path?: string }) {
               <p className="lead">{t.expertiseIntro}</p>
             </div>
             <OffersFull l={l} />
-            <Method l={l} />
-            <Commitments l={l} />
             <Faq l={l} items={t.faqServices} title={loyalty[l].faqTitle} />
-            <Work l={l} />
             <LoyaltyBridge l={l} />
             <Closing l={l} />
           </>
@@ -466,10 +431,11 @@ export function SitePage({ l, path = '' }: { l: Locale; path?: string }) {
         {path === 'about' && (
           <>
             <Agency l={l} full />
-            <Facts l={l} />
+            <Manifesto tone="bg-pink" text={t.manifesto.text} note={t.manifesto.note} />
+            <Method l={l} />
             <Commitments l={l} />
+            <Facts l={l} />
             <Faq l={l} items={t.faqAbout} title={loyalty[l].faqTitle} />
-            <Work l={l} />
             <Closing l={l} />
           </>
         )}

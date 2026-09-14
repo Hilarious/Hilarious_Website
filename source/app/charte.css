@@ -90,6 +90,16 @@ body{background:var(--cream);color:var(--ink)}
 .act2{margin-top:56px;max-width:720px}
 .act2 .lead{font:600 clamp(24px,2.6vw,38px)/1.2 var(--display)}
 
+/* L'accueil ne porte qu'un seul bandeau d'argument : le constat, la reponse, deux sorties. */
+.argument{background:var(--cream)}
+.argument h2{max-width:1100px;font-size:clamp(42px,5.6vw,88px)}
+.stairs-answer{font:600 clamp(20px,2.2vw,30px)/1.25 var(--display);margin-top:46px;max-width:820px}
+.argument-answer{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,6vw,90px);margin-top:72px;padding-top:56px;border-top:1px solid #0003}
+.argument-answer .as-h2{font-size:clamp(38px,4.6vw,74px)}
+.argument-links{display:flex;flex-wrap:wrap;gap:16px 40px;margin-top:34px}
+@media(max-width:1000px){.argument-answer{grid-template-columns:1fr;gap:26px;margin-top:52px;padding-top:40px}}
+@media(max-width:700px){.argument h2{font-size:clamp(36px,10vw,56px)}.stairs-answer{font-size:clamp(19px,5.5vw,24px);margin-top:32px}.argument-answer .as-h2{font-size:clamp(30px,8.5vw,46px)}}
+
 /* Manifeste : une phrase sur une couleur pleine (slides 5 et 12) */
 .manifesto{padding:clamp(80px,13vh,150px) clamp(24px,5.3vw,100px);display:grid;gap:36px}
 .manifesto h2{font-size:clamp(40px,6.4vw,102px);max-width:1320px;line-height:.96}

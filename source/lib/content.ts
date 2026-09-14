@@ -51,7 +51,7 @@ export const copy: Record<Locale, Copy> = {
     discover: 'Découvrir nos projets', talk: 'Parlons de votre projet', selected: 'Quelques preuves.', projects: 'LES IDÉES,\nEN ACTION.', all: 'Tous les projets', view: 'Voir le projet',
     expertise: 'DE L’IDÉE\nÀ L’IMPACT.',
     expertiseIntro: 'Des plateformes de fidélité, des jeux et des expériences qui demandent à votre public de faire quelque chose plutôt que de regarder. Et les campagnes, les sites et les contenus qui les portent.',
-    labels: { act1: 'Acte 1 · Problème', act2: 'Acte 2 · Déclic', act3: 'Acte 3 · Solution', method: 'Méthode', commitment: 'Engagement', offer: 'Ce qu’on fait', agency: 'L’agence', contact: 'Contact', faq: 'Questions', caseLabel: 'Cas client', proof: 'Preuves', context: 'Hilarious · 2026' },
+    labels: { act1: 'Le constat', act2: 'Le déclic', act3: 'Notre réponse', method: 'Méthode', commitment: 'Engagement', offer: 'Ce qu’on fait', agency: 'L’agence', contact: 'Contact', faq: 'Questions', caseLabel: 'Cas client', proof: 'Preuves', context: 'Hilarious · 2026' },
     attention: {
       title: 'COMBIEN DE TEMPS UNE MARQUE\nRETIENT-ELLE VOTRE ATTENTION ?',
       bars: [['3’’', 'Affichage'], ['6’’', 'Réseaux sociaux'], ['30’’', 'Spot TV'], ['2’35’’', 'Jeu créatif']],
@@ -152,7 +152,7 @@ export const copy: Record<Locale, Copy> = {
     discover: 'Explore our work', talk: 'Let’s talk about your project', selected: 'A little proof.', projects: 'IDEAS\nIN ACTION.', all: 'All projects', view: 'View project',
     expertise: 'FROM IDEA\nTO IMPACT.',
     expertiseIntro: 'Loyalty platforms, games and experiences that ask your audience to do something rather than watch. And the campaigns, websites and content that carry them.',
-    labels: { act1: 'Act 1 · Problem', act2: 'Act 2 · Trigger', act3: 'Act 3 · Solution', method: 'Method', commitment: 'Commitment', offer: 'What we do', agency: 'The agency', contact: 'Contact', faq: 'Questions', caseLabel: 'Case study', proof: 'Proof', context: 'Hilarious · 2026' },
+    labels: { act1: 'The problem', act2: 'The trigger', act3: 'Our answer', method: 'Method', commitment: 'Commitment', offer: 'What we do', agency: 'The agency', contact: 'Contact', faq: 'Questions', caseLabel: 'Case study', proof: 'Proof', context: 'Hilarious · 2026' },
     attention: {
       title: 'HOW LONG DOES A BRAND\nHOLD YOUR ATTENTION?',
       bars: [['3’’', 'Out-of-home'], ['6’’', 'Social media'], ['30’’', 'TV spot'], ['2’35’’', 'Creative game']],
@@ -253,7 +253,7 @@ export const copy: Record<Locale, Copy> = {
     discover: 'Ontdek onze projecten', talk: 'Vertel ons over je project', selected: 'Een beetje bewijs.', projects: 'IDEEËN\nIN ACTIE.', all: 'Alle projecten', view: 'Bekijk het project',
     expertise: 'VAN IDEE\nNAAR IMPACT.',
     expertiseIntro: 'Loyaliteitsplatformen, games en ervaringen die je publiek vragen om iets te doen in plaats van te kijken. En de campagnes, websites en content die ze dragen.',
-    labels: { act1: 'Akte 1 · Probleem', act2: 'Akte 2 · Klik', act3: 'Akte 3 · Oplossing', method: 'Methode', commitment: 'Engagement', offer: 'Wat we doen', agency: 'Het bureau', contact: 'Contact', faq: 'Vragen', caseLabel: 'Klantcase', proof: 'Bewijs', context: 'Hilarious · 2026' },
+    labels: { act1: 'De vaststelling', act2: 'De klik', act3: 'Ons antwoord', method: 'Methode', commitment: 'Engagement', offer: 'Wat we doen', agency: 'Het bureau', contact: 'Contact', faq: 'Vragen', caseLabel: 'Klantcase', proof: 'Bewijs', context: 'Hilarious · 2026' },
     attention: {
       title: 'HOE LANG HOUDT EEN MERK\nJOUW AANDACHT VAST?',
       bars: [['3’’', 'Affichage'], ['6’’', 'Sociale media'], ['30’’', 'Tv-spot'], ['2’35’’', 'Creatieve game']],
