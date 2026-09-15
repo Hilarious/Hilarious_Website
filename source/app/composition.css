@@ -191,3 +191,25 @@
  .stair,.offer-meta,.values article,.fact,.cascade article,.band,.project-card .project-image,.project-card img,.offer-proof-grid a{transition:none}
   [data-reveal]{animation:none}
 }
+
+/* 13. Le signe pour descendre, decide par Audry le 14/09/2026.
+
+      L'accueil occupe exactement un ecran et rien n'annoncait le constat en dessous.
+      Arbitrage rendu : le bandeau reste, avec une invitation visible.
+
+      Le signe est pose dans le flux du bloc de texte, sous l'accroche manuscrite, et non
+      en position absolue en bas de l'ecran. Raison mesuree le 14/09/2026 : en desktop la
+      zone basse est libre, mais sur telephone la porte occupe tout le bas et la ligne
+      fidelisation le dernier rang, donc un signe absolu aurait heurte l'un ou l'autre selon
+      la largeur. Dans le flux, il suit le texte partout.
+
+      Il reste volontairement discret : la pastille violette « Decouvrez nos projets » est
+      l'action principale de l'ecran, et deux invitations de meme poids se seraient
+      concurrencees. */
+.entrance-scroll{display:inline-flex;align-items:center;gap:10px;margin-top:clamp(18px,2.4vw,32px);pointer-events:auto;font-family:'Caveat',cursive;font-size:clamp(20px,1.7vw,26px);line-height:1.1;color:var(--play-purple);rotate:-2deg;transition:translate .4s cubic-bezier(.22,1,.36,1),rotate .4s cubic-bezier(.22,1,.36,1)}
+.entrance-scroll span{border-bottom:2px solid currentColor;padding-bottom:2px}
+.entrance-scroll svg{flex:0 0 auto;animation:nudge-down 2.1s ease-in-out infinite}
+.entrance-scroll:hover{translate:0 3px;rotate:1deg}
+@keyframes nudge-down{0%,100%{translate:0 0}50%{translate:0 6px}}
+@media(max-width:700px){.entrance-scroll{font-size:19px;margin-top:14px;gap:8px}.entrance-scroll svg{width:18px;height:18px}}
+@media(prefers-reduced-motion:reduce){.entrance-scroll svg{animation:none}.entrance-scroll{transition:none}}

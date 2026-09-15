@@ -132,7 +132,7 @@ function Argument({ l }: { l: Locale }) {
   const tones = ['bg-mint', 'bg-cyan', 'bg-pink', 'bg-yellow'];
   return (
     <>
-      <section className="argument section" aria-labelledby="argument-title">
+      <section className="argument section" id="constat" aria-labelledby="argument-title">
         <Micro left={t.labels.act1} right={t.labels.context} />
         <h2 id="argument-title" data-reveal>{t.attention.title}</h2>
         <p className="stairs-note">{t.attention.note}</p>
